@@ -227,6 +227,21 @@
       margin-top: 1.5rem;
     }
 
+    .about-photo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .about-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 999px; /* circle */
+      object-fit: cover;
+      border: 2px solid rgba(148, 163, 184, 0.8);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.9);
+    }
+
     .about-card {
       background: radial-gradient(circle at top, rgba(15, 23, 42, 0.96), rgba(3, 7, 18, 1));
       border-radius: 1.25rem;
@@ -454,6 +469,15 @@
       <div class="section-inner">
         <div class="section-label">About</div>
         <h2 class="section-title">Behind the pages</h2>
+
+        <div class="about-photo-wrap">
+          <img
+            src="author-photo.jpg"
+            alt="Fantasy author C. T. Montel"
+            class="about-photo"
+          />
+        </div>
+
         <div class="about-grid">
           <div class="section-body">
             <p>
