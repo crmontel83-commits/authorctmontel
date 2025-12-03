@@ -5,475 +5,7 @@
   <title>C. T. MONTEL | EPIC FANTASY AUTHOR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <style>
-    /* ===== Global styles ===== */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      /* Deep black + navy gradient */
-      background: radial-gradient(circle at top, #111827, #020617 55%, #000000);
-      color: #e5e7eb;
-      line-height: 1.6;
-    }
-
-    a {
-      color: #60a5fa; /* soft blue accent */
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 1.5rem;
-    }
-
-    /* ===== Navigation ===== */
-    header {
-      border-bottom: 1px solid rgba(148, 163, 184, 0.3);
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(14px);
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.96),
-        rgba(15, 23, 42, 0.9)
-      );
-      z-index: 10;
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .logo {
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #f9fafb;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    nav a {
-      padding: 0.4rem 0.6rem;
-      border-radius: 999px;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    nav a:hover {
-      background: rgba(37, 99, 235, 0.18);
-      color: #f9fafb;
-    }
-
-    /* ===== Hero ===== */
-    .hero {
-      padding: 4.5rem 1.5rem 3.5rem;
-      text-align: center;
-      background:
-        radial-gradient(circle at 10% 0%, rgba(148, 163, 184, 0.18), transparent 55%),
-        radial-gradient(circle at 85% 15%, rgba(37, 99, 235, 0.28), transparent 60%);
-    }
-
-    .hero-inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .hero-kicker {
-      font-size: 0.85rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #93c5fd; /* light blue */
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-title {
-      font-size: clamp(2.2rem, 5vw, 3.3rem);
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-title span {
-      color: #60a5fa; /* blue accent */
-    }
-
-    .hero-tagline {
-      font-size: 1.05rem;
-      color: #e5e7eb;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-tagline span {
-      color: #93c5fd;
-    }
-
-    .hero-sub {
-      font-size: 0.95rem;
-      color: #d1d5db; /* silver-grey */
-      margin-bottom: 2rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .btn {
-      border-radius: 999px;
-      padding: 0.75rem 1.4rem;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      border: 1px solid transparent;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.35rem;
-      transition: background 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
-    }
-
-    .btn-primary {
-      background: linear-gradient(to right, #020617, #1d4ed8, #38bdf8);
-      color: #f9fafb;
-      box-shadow: 0 10px 32px rgba(37, 99, 235, 0.55);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      border-color: rgba(229, 231, 235, 0.9); /* pale silver edge */
-    }
-
-    .btn-ghost {
-      border-color: rgba(156, 163, 175, 0.8); /* grey */
-      color: #e5e7eb;
-      background: rgba(3, 7, 18, 0.98);
-    }
-
-    .btn-ghost:hover {
-      border-color: #60a5fa;
-      background: rgba(15, 23, 42, 1);
-    }
-
-    /* ===== Sections ===== */
-    section {
-      padding: 3rem 0;
-    }
-
-    section:nth-of-type(odd) {
-      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 60%);
-    }
-
-    section:nth-of-type(even) {
-      background: radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.9), transparent 60%);
-    }
-
-    .section-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .section-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #9ca3af; /* muted grey */
-      margin-bottom: 0.4rem;
-    }
-
-    .section-title {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      color: #f9fafb;
-    }
-
-    .section-body {
-      font-size: 0.98rem;
-      color: #e5e7eb;
-      max-width: 700px;
-    }
-
-    /* ===== About ===== */
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 2rem;
-      align-items: start;
-      margin-top: 1.5rem;
-    }
-
-    .about-photo-wrap {
-      display: flex;
-      justify-content: center;
-      margin-top: 1.5rem;
-    }
-
-    .about-photo {
-      width: 100%;
-      max-width: 400px;
-      height: auto;
-      border-radius: 16px;
-      object-fit: cover;
-      border: 2px solid rgba(148, 163, 184, 0.8);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.9);
-    }
-
-    .about-card {
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.96), rgba(3, 7, 18, 1));
-      border-radius: 1.25rem;
-      border: 1px solid rgba(156, 163, 175, 0.7);
-      padding: 1.25rem 1.4rem;
-      font-size: 0.9rem;
-      color: #e5e7eb;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.95);
-    }
-
-    .about-card h3 {
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #93c5fd;
-      margin-bottom: 0.6rem;
-    }
-
-    .about-list {
-      list-style: none;
-    }
-
-    .about-list li::before {
-      content: "✶";
-      margin-right: 0.4rem;
-      color: #38bdf8;
-    }
-
-    /* ===== Books ===== */
-    .books-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .book-card {
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.96), rgba(2, 6, 23, 1));
-      border-radius: 1.2rem;
-      padding: 1.2rem 1.25rem;
-      border: 1px solid rgba(156, 163, 175, 0.75);
-      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.95);
-      display: flex;
-      flex-direction: column;
-      gap: 0.55rem;
-    }
-
-    .book-tag {
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #bfdbfe;
-    }
-
-    .book-title {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: #f9fafb;
-    }
-
-    .book-meta {
-      font-size: 0.8rem;
-      color: #d1d5db;
-    }
-
-    .book-blurb {
-      font-size: 0.9rem;
-      color: #e5e7eb;
-      flex-grow: 1;
-    }
-
-    .book-links {
-      margin-top: 0.6rem;
-      font-size: 0.85rem;
-    }
-
-    /* ===== World of Pasi ===== */
-    .world-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .world-card {
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.96), rgba(2, 6, 23, 1));
-      border-radius: 1.2rem;
-      border: 1px solid rgba(156, 163, 175, 0.75);
-      padding: 1.2rem 1.25rem;
-      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.95);
-      font-size: 0.9rem;
-      color: #e5e7eb;
-    }
-
-    .world-card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-      color: #bfdbfe;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .world-card p {
-      font-size: 0.9rem;
-      color: #e5e7eb;
-    }
-
-    .world-card ul {
-      margin-top: 0.4rem;
-      padding-left: 1rem;
-      font-size: 0.9rem;
-      color: #e5e7eb;
-    }
-
-    .world-card ul li {
-      margin-bottom: 0.2rem;
-    }
-
-    /* ===== Newsletter ===== */
-    .newsletter {
-      margin-top: 1.25rem;
-      background: radial-gradient(circle at top, rgba(37, 99, 235, 0.35), rgba(3, 7, 18, 0.98));
-      border-radius: 1.5rem;
-      padding: 1.75rem 1.5rem;
-      border: 1px solid rgba(96, 165, 250, 0.7);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 1);
-    }
-
-    .newsletter p {
-      font-size: 0.95rem;
-      color: #f3f4f6;
-      margin-bottom: 1rem;
-    }
-
-    .newsletter-form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      align-items: center;
-    }
-
-    .newsletter-form input[type="email"] {
-      flex: 1 1 180px;
-      padding: 0.7rem 0.9rem;
-      border-radius: 999px;
-      border: 1px solid rgba(209, 213, 219, 0.9);
-      background: rgba(15, 23, 42, 0.98);
-      color: #e5e7eb;
-      font-size: 0.9rem;
-    }
-
-    .newsletter-form input::placeholder {
-      color: #9ca3af;
-    }
-
-    .newsletter small {
-      display: block;
-      font-size: 0.75rem;
-      color: #d4d4d8;
-      margin-top: 0.5rem;
-    }
-
-    /* ===== Contact ===== */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 2rem;
-      margin-top: 1.5rem;
-    }
-
-    .contact-item {
-      font-size: 0.95rem;
-      color: #e5e7eb;
-      margin-bottom: 0.6rem;
-    }
-
-    .social-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 0.5rem;
-    }
-
-    .chip {
-      display: inline-block;
-      padding: 0.4rem 0.75rem;
-      border-radius: 999px;
-      border: 1px solid rgba(156, 163, 175, 0.9);
-      font-size: 0.8rem;
-      background: rgba(3, 7, 18, 0.98);
-      color: #e5e7eb;
-    }
-
-    .chip:hover {
-      text-decoration: none;
-      border-color: #60a5fa;
-      background: rgba(15, 23, 42, 1);
-    }
-
-    /* ===== Footer ===== */
-    footer {
-      border-top: 1px solid rgba(148, 163, 184, 0.35);
-      padding: 1.5rem;
-      font-size: 0.8rem;
-      color: #9ca3af;
-      text-align: center;
-      background: #020617;
-    }
-
-    /* ===== Responsive tweaks ===== */
-    @media (max-width: 768px) {
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav ul {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-      }
-
-      .hero {
-        padding-top: 3.2rem;
-      }
-
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
@@ -481,9 +13,9 @@
       <div class="logo">C. T. MONTEL · Epic Fantasy Author</div>
       <nav>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#books">Books</a></li>
-          <li><a href="#pasi">The World of Pasi</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="books.html">Books &amp; Series</a></li>
+          <li><a href="world-of-pasi.html">The World of Pasi</a></li>
           <li><a href="#newsletter">Newsletter</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -504,12 +36,12 @@
           with a small dash of hope to keep them trundling along the path of oblivion.
         </p>
         <p class="hero-sub">
-          Step into <em>The Chronicles of Ka&apos;Maetheus</em>—a high, epic, and dark fantasy universe where light
-          is hard-earned and nothing is safe for long.
+          Step into <em>The Chronicles of Ka&apos;Maetheus</em>&mdash;a universe of many worlds. Your journey begins
+          on the bruised planet <strong>Pasi</strong>, where Hunters walk the line between humanity and the dark.
         </p>
         <div class="hero-buttons">
-          <a class="btn btn-primary" href="#books">Explore the books ✶</a>
-          <a class="btn btn-ghost" href="#newsletter">Join the newsletter</a>
+          <a class="btn btn-primary" href="books.html#hunter-society">Start with The Hunter Society ✶</a>
+          <a class="btn btn-ghost" href="world-of-pasi.html">Explore the World of Pasi</a>
         </div>
       </div>
     </section>
@@ -559,123 +91,55 @@
       </div>
     </section>
 
-    <!-- Books -->
-    <section id="books">
+    <!-- Featured series teaser -->
+    <section>
       <div class="section-inner">
-        <div class="section-label">Books</div>
-        <h2 class="section-title">Stories from other worlds</h2>
+        <div class="section-label">Start Here</div>
+        <h2 class="section-title">The Hunter Society · Entry Point to Ka&apos;Maetheus</h2>
         <p class="section-body">
-          Here&apos;s a glimpse into the tales unfolding within <em>The Chronicles of Ka&apos;Maetheus</em>.
-          As release dates and links go live, I&apos;ll update this space.
+          For new readers, the best place to begin is with <strong>The Hunter Society</strong>, an adult epic fantasy series
+          that follows those sworn to stand between Pasi and the horrors clawing at its edges.
         </p>
 
         <div class="books-grid">
-          <!-- Wings of Dawn: Hunter's Apprentice -->
           <article class="book-card">
-            <div class="book-tag">Debut Novel · The Hunter Society</div>
+            <div class="book-tag">Debut Novel · Coming Soon</div>
             <h3 class="book-title">Wings of Dawn: Hunter&apos;s Apprentice</h3>
-            <div class="book-meta">Adult Epic Fantasy · Dark · High Stakes · The Chronicles of Ka&apos;Maetheus</div>
+            <div class="book-meta">The Hunter Society · The Chronicles of Ka&apos;Maetheus</div>
             <p class="book-blurb">
-              In a world where monsters wear human faces, a fledgling hunter is bound to The Hunter Society&#8212;an ancient
-              order sworn to stand between Ka&apos;Maetheus and the horrors that crawl out of its ruined past. As the line
-              between prey and predator blurs, loyalty, sanity, and the last scraps of hope are put to the test.
+              In a world where monsters wear human faces, a fledgling hunter is bound to The Hunter Society&mdash;an ancient
+              order sworn to stand between Pasi and the horrors that crawl out of its ruined past. As the line between prey
+              and predator blurs, loyalty, sanity, and the last scraps of hope are put to the test.
             </p>
             <div class="book-links">
-              <span class="chip">Status: Coming Soon</span>
+              <span class="chip">Status: Drafting</span>
+              <span class="chip">Adult · Dark · High Fantasy</span>
             </div>
           </article>
+        </div>
 
-          <!-- The Hunter Society (series) -->
-          <article class="book-card">
-            <div class="book-tag">Series · Dark Epic Fantasy</div>
-            <h3 class="book-title">The Hunter Society</h3>
-            <div class="book-meta">Set within The Chronicles of Ka&apos;Maetheus</div>
-            <p class="book-blurb">
-              A sweeping, brutal saga following those who dare to stand between a dying world and the absolute evil that
-              would finish the job. Each volume digs deeper into the secrets of Ka&apos;Maetheus, the cost of resistance,
-              and the thin, fragile thread of humanity that refuses to snap.
-            </p>
-            <div class="book-links">
-              <span class="chip">More volumes in development</span>
-            </div>
-          </article>
+        <div style="margin-top: 1.5rem;">
+          <a class="btn btn-ghost" href="books.html">See all series in Ka&apos;Maetheus</a>
         </div>
       </div>
     </section>
 
-    <!-- The World of Pasi -->
-    <section id="pasi">
+    <!-- Pasi teaser -->
+    <section>
       <div class="section-inner">
-        <div class="section-label">The World of Pasi</div>
-        <h2 class="section-title">The World of Pasi · Gateway to Ka&apos;Maetheus</h2>
-        <div class="section-body">
-          <p>
-            <em>The Chronicles of Ka&apos;Maetheus</em> span many worlds&#8212;shattered realms, forgotten spheres, and places
-            that should have stayed myth. <strong>Pasi</strong> is where you enter: a bruised planet caught between fading gods,
-            hungry empires, and the quiet, stubborn lives that refuse to be erased.
-          </p>
-          <br />
-          <p>
-            Think of this space as your first gate. From here, you&apos;ll travel through Pasi&apos;s cities and wastelands,
-            learn the rules of its magic, and hear the stories children whisper when the lamps go out. Other worlds in
-            Ka&apos;Maetheus wait beyond the fog&#8212;but we begin here.
-          </p>
-        </div>
-
-        <div class="world-grid">
-          <!-- Worldbuilding -->
-          <article class="world-card">
-            <h3>Worldbuilding</h3>
-            <p>
-              Pasi is a world built on fault lines&#8212;between old faiths and new powers, between the civilized glow of
-              walled cities and the wild dark that presses in from the borders.
-            </p>
-            <ul>
-              <li>Borderland towns that cling to trade routes like lifelines.</li>
-              <li>Ruined sites where something ancient clearly lost.</li>
-              <li>Orders and societies trying to contain what slips through the cracks.</li>
-            </ul>
-            <p>
-              The further you travel from the safe roads, the more the seams of reality show. Monsters aren&apos;t always
-              obvious. Neither are heroes.
-            </p>
-          </article>
-
-          <!-- Magic System -->
-          <article class="world-card">
-            <h3>Magic System</h3>
-            <p>
-              On Pasi, power is never free. Magic moves through <em>pacts</em>, <em>marks</em>, and the old echoes of Ka&apos;Maetheus
-              itself. Every working has a cost&#8212;in memory, in blood, in the slow erosion of who you think you are.
-            </p>
-            <ul>
-              <li>Some orders bind themselves to ancient beings for borrowed strength.</li>
-              <li>Some carve sigils into steel, bone, or their own skin.</li>
-              <li>Some pretend there is no magic at all&#8212;until it comes collecting.</li>
-            </ul>
-            <p>
-              The Hunters who walk this world don&apos;t just fight monsters. They wrestle with the price of the power they use
-              to face them.
-            </p>
-          </article>
-
-          <!-- Fairy Tales & Mythologies -->
-          <article class="world-card">
-            <h3>Fairy Tales &amp; Mythologies</h3>
-            <p>
-              The stories told to Pasi&apos;s children are not soft. Their lullabies remember cities that vanished overnight,
-              rivers that ran backwards for a year, and saints who broke the sky to keep something worse from getting in.
-            </p>
-            <ul>
-              <li>Whispered tales of doors that appear only on storm nights.</li>
-              <li>Fables about bargains you must never strike&#8212;and what happens if you do.</li>
-              <li>Local myths that hint at the larger machinery of Ka&apos;Maetheus.</li>
-            </ul>
-            <p>
-              As you read, you&apos;ll see these tales surface in tavern gossip, Hunter training, and the quiet fears of ordinary
-              people. Pasi&apos;s myths are the breadcrumb trail to the deeper horrors, and wonders, of the wider universe.
-            </p>
-          </article>
+        <div class="section-label">Universe</div>
+        <h2 class="section-title">The World of Pasi</h2>
+        <p class="section-body">
+          <em>The Chronicles of Ka&apos;Maetheus</em> span many worlds, but <strong>Pasi</strong> is your first gate&mdash;a planet
+          caught between fading gods, hungry empires, and the quiet, stubborn lives that refuse to be erased.
+        </p>
+        <br />
+        <p class="section-body">
+          On the dedicated Pasi page, you&apos;ll find an overview of the world, how its magic works, and the fairy tales and
+          mythologies whispered when the lamps go out.
+        </p>
+        <div style="margin-top: 1.5rem;">
+          <a class="btn btn-primary" href="world-of-pasi.html">Travel to Pasi</a>
         </div>
       </div>
     </section>
@@ -688,7 +152,7 @@
         <div class="newsletter">
           <p>
             Want glimpses into undone worlds, early snippets from <em>The Chronicles of Ka&apos;Maetheus</em>, and the
-            occasional unhinged writing update? Join my newsletter and I&apos;ll send only the good stuff&#8212;no spam,
+            occasional unhinged writing update? Join my newsletter and I&apos;ll send only the good stuff&mdash;no spam,
             no selling your email to shadowy councils of eldritch beings.
           </p>
           <form class="newsletter-form" action="#" method="post">
@@ -729,7 +193,7 @@
             <div class="social-links">
               <span class="chip">Instagram · @authorc.t_montel</span>
               <span class="chip">Facebook · Author C. T. Montel</span>
-              <!-- We can make these clickable later -->
+              <!-- We can turn these into clickable links after this step -->
             </div>
           </div>
         </div>
@@ -742,7 +206,6 @@
   </footer>
 
   <script>
-    // Set current year automatically
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
