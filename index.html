@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>C. T. MONTEL | EPIC FANTASY AUTHOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* ===== Global styles ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      /* Deep black + navy gradient */
+      background: radial-gradient(circle at top, #111827, #020617 55%, #000000);
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #60a5fa; /* soft blue accent */
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* ===== Navigation ===== */
+    header {
+      border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.96),
+        rgba(15, 23, 42, 0.9)
+      );
+      z-index: 10;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #f9fafb;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    nav a {
+      padding: 0.4rem 0.6rem;
+      border-radius: 999px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    nav a:hover {
+      background: rgba(37, 99, 235, 0.18);
+      color: #f9fafb;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      padding: 4.5rem 1.5rem 3.5rem;
+      text-align: center;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(148, 163, 184, 0.18), transparent 55%),
+        radial-gradient(circle at 85% 15%, rgba(37, 99, 235, 0.28), transparent 60%);
+    }
+
+    .hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero-kicker {
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #93c5fd; /* light blue */
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.3rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title span {
+      color: #60a5fa; /* blue accent */
+    }
+
+    .hero-tagline {
+      font-size: 1.05rem;
+      color: #e5e7eb;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-tagline span {
+      color: #93c5fd;
+    }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      color: #d1d5db; /* silver-grey */
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.75rem 1.4rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, #020617, #1d4ed8, #38bdf8);
+      color: #f9fafb;
+      box-shadow: 0 10px 32px rgba(37, 99, 235, 0.55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      border-color: rgba(229, 231, 235, 0.9); /* pale silver edge */
+    }
+
+    .btn-ghost {
+      border-color: rgba(156, 163, 175, 0.8); /* grey */
+      color: #e5e7eb;
+      background: rgba(3, 7, 18, 0.98);
+    }
+
+    .btn-ghost:hover {
+      border-color: #60a5fa;
+      background: rgba(15, 23, 42, 1);
+    }
+
+    /* ===== Sections ===== */
+    section {
+      padding: 3rem 0;
+    }
+
+    section:nth-of-type(odd) {
+      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 60%);
+    }
+
+    section:nth-of-type(even) {
+      background: radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.9), transparent 60%);
+    }
+
+    .section-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #9ca3af; /* muted grey */
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #f9fafb;
+    }
+
+    .section-body {
+      font-size: 0.98rem;
+      color: #e5e7eb;
+      max-width: 700px;
+    }
+
+    /* ===== About ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2rem;
+      align-items: start;
+      margin-top: 1.5rem;
+    }
+
+    .about-card {
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.96), rgba(3, 7, 18, 1));
+      border-radius: 1.25rem;
+      border: 1px solid rgba(156, 163, 175, 0.7);
+      padding: 1.25rem 1.4rem;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.95);
+    }
+
+    .about-card h3 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #93c5fd;
+      margin-bottom: 0.6rem;
+    }
+
+    .about-list {
+      list-style: none;
+    }
+
+    .about-list li::before {
+      content: "✶";
+      margin-right: 0.4rem;
+      color: #38bdf8;
+    }
+
+    /* ===== Books ===== */
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .book-card {
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.96), rgba(2, 6, 23, 1));
+      border-radius: 1.2rem;
+      padding: 1.2rem 1.25rem;
+      border: 1px solid rgba(156, 163, 175, 0.75);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.95);
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .book-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #bfdbfe;
+    }
+
+    .book-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #f9fafb;
+    }
+
+    .book-meta {
+      font-size: 0.8rem;
+      color: #d1d5db;
+    }
+
+    .book-blurb {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      flex-grow: 1;
+    }
+
+    .book-links {
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+    }
+
+    /* ===== Newsletter ===== */
+    .newsletter {
+      margin-top: 1.25rem;
+      background: radial-gradient(circle at top, rgba(37, 99, 235, 0.35), rgba(3, 7, 18, 0.98));
+      border-radius: 1.5rem;
+      padding: 1.75rem 1.5rem;
+      border: 1px solid rgba(96, 165, 250, 0.7);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 1);
+    }
+
+    .newsletter p {
+      font-size: 0.95rem;
+      color: #f3f4f6;
+      margin-bottom: 1rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+    }
+
+    .newsletter-form input[type="email"] {
+      flex: 1 1 180px;
+      padding: 0.7rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      background: rgba(15, 23, 42, 0.98);
+      color: #e5e7eb;
+      font-size: 0.9rem;
+    }
+
+    .newsletter-form input::placeholder {
+      color: #9ca3af;
+    }
+
+    .newsletter small {
+      display: block;
+      font-size: 0.75rem;
+      color: #d4d4d8;
+      margin-top: 0.5rem;
+    }
+
+    /* ===== Contact ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-item {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      margin-bottom: 0.6rem;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .chip {
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(156, 163, 175, 0.9);
+      font-size: 0.8rem;
+      background: rgba(3, 7, 18, 0.98);
+      color: #e5e7eb;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-align: center;
+      background: #020617;
+    }
+
+    /* ===== Responsive tweaks ===== */
+    @media (max-width: 768px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding-top: 3.2rem;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-inner">
+      <div class="logo">C. T. MONTEL · Epic Fantasy Author</div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#books">Books</a></li>
+          <li><a href="#universe">Universe</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-kicker">Epic Fantasy · Dark Worlds · Fragile Hope</div>
+        <h1 class="hero-title">
+          C. T. <span>MONTEL</span>
+        </h1>
+        <p class="hero-tagline">
+          I am the dark architect of terrible worlds where absolute evil is hellbent on crushing the heroes,
+          with a small dash of hope to keep them trundling along the path of oblivion.
+        </p>
+        <p class="hero-sub">
+          Step into <em>The Chronicles of Ka&apos;Maetheus</em>—a high, epic, and dark fantasy universe where light
+          is hard-earned and nothing is safe for long.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#books">Explore the books ✶</a>
+          <a class="btn btn-ghost" href="#newsletter">Join the newsletter</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="section-inner">
+        <div class="section-label">About</div>
+        <h2 class="section-title">Behind the pages</h2>
+        <div class="about-grid">
+          <div class="section-body">
+            <p>
+              My name is <strong>C. T. Montel</strong>, and I suffer from a beautiful form of madness&#8212;that of the creative.
+              From the moment I was born, my mind churned with the glimmers of fantastical worlds awaiting only to be explored.
+            </p>
+            <br />
+            <p>
+              I write high, epic, and dark fantasy that asks what happens when absolute evil is not a story told around the fire,
+              but a living force intent on grinding heroes into dust. My work lives in <em>The Chronicles of Ka&apos;Maetheus</em>,
+              a sprawling universe of broken gods, haunted cities, and the stubborn souls who refuse to bow.
+            </p>
+            <br />
+            <p>
+              If you enjoy character-driven stories, impossible odds, and that tiny, treacherous spark of hope that survives
+              in the shadow of oblivion, you&apos;re in the right place.
+            </p>
+          </div>
+          <aside class="about-card">
+            <h3>Story Vibes</h3>
+            <ul class="about-list">
+              <li>Epic quests in crumbling worlds</li>
+              <li>Ordinary people facing impossible evil</li>
+              <li>Moral ambiguity, costly magic, hard choices</li>
+              <li>A stubborn ember of hope in all the ruin</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Books -->
+    <section id="books">
+      <div class="section-inner">
+        <div class="section-label">Books</div>
+        <h2 class="section-title">Stories from other worlds</h2>
+        <p class="section-body">
+          Here&apos;s a glimpse into the tales unfolding within <em>The Chronicles of Ka&apos;Maetheus</em>.
+          As release dates and links go live, I&apos;ll update this space.
+        </p>
+
+        <div class="books-grid">
+          <!-- Wings of Dawn: Hunter's Apprentice -->
+          <article class="book-card">
+            <div class="book-tag">Debut Novel · The Hunter Society</div>
+            <h3 class="book-title">Wings of Dawn: Hunter&apos;s Apprentice</h3>
+            <div class="book-meta">Adult Epic Fantasy · Dark · High Stakes · The Chronicles of Ka&apos;Maetheus</div>
+            <p class="book-blurb">
+              In a world where monsters wear human faces, a fledgling hunter is bound to The Hunter Society&#8212;an ancient
+              order sworn to stand between Ka&apos;Maetheus and the horrors that crawl out of its ruined past. As the line
+              between prey and predator blurs, loyalty, sanity, and the last scraps of hope are put to the test.
+            </p>
+            <div class="book-links">
+              <span class="chip">Status: Coming Soon</span>
+            </div>
+          </article>
+
+          <!-- The Hunter Society (series) -->
+          <article class="book-card">
+            <div class="book-tag">Series · Dark Epic Fantasy</div>
+            <h3 class="book-title">The Hunter Society</h3>
+            <div class="book-meta">Set within The Chronicles of Ka&apos;Maetheus</div>
+            <p class="book-blurb">
+              A sweeping, brutal saga following those who dare to stand between a dying world and the absolute evil that
+              would finish the job. Each volume digs deeper into the secrets of Ka&apos;Maetheus, the cost of resistance,
+              and the thin, fragile thread of humanity that refuses to snap.
+            </p>
+            <div class="book-links">
+              <span class="chip">More volumes in development</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Universe / Coming Soon -->
+    <section id="universe">
+      <div class="section-inner">
+        <div class="section-label">Universe</div>
+        <h2 class="section-title">The Chronicles of Ka&apos;Maetheus</h2>
+        <div class="section-body">
+          <p>
+            <em>The Chronicles of Ka&apos;Maetheus</em> is the spine that all my stories cling to&#8212;a shattered world of
+            dead empires, hungry gods, and ordinary people trying not to break under the weight of it all.
+          </p>
+          <br />
+          <p>
+            As the universe expands, this space will grow into your guide to Ka&apos;Maetheus: suggested reading orders,
+            maps, timelines, character dossiers, and the quiet, brutal histories that never make it onto the page.
+          </p>
+          <br />
+          <p>
+            For now, consider this your <strong>gateway</strong>. If you&apos;d like to be the first to know when new lore,
+            art, and stories unlock, make sure you&apos;re signed up to the newsletter below.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section id="newsletter">
+      <div class="section-inner">
+        <div class="section-label">Newsletter</div>
+        <h2 class="section-title">Whispers from Ka&apos;Maetheus</h2>
+        <div class="newsletter">
+          <p>
+            Want glimpses into undone worlds, early snippets from <em>The Chronicles of Ka&apos;Maetheus</em>, and the
+            occasional unhinged writing update? Join my newsletter and I&apos;ll send only the good stuff&#8212;no spam,
+            no selling your email to shadowy councils of eldritch beings.
+          </p>
+          <form class="newsletter-form" action="#" method="post">
+            <input type="email" name="email" placeholder="yourname@realm.com" required />
+            <button type="submit" class="btn btn-primary">Sign up</button>
+          </form>
+          <small>
+            This form is just a placeholder for now. When you&apos;re ready, you can connect it to MailerLite, Mailchimp,
+            or your email service of choice.
+          </small>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-inner">
+        <div class="section-label">Contact</div>
+        <h2 class="section-title">Get in touch</h2>
+        <div class="contact-grid">
+          <div>
+            <p class="section-body">
+              Have a question, collaboration idea, or just want to scream about a character? I&apos;d love to hear from you.
+            </p>
+            <div class="contact-item">
+              Email:
+              <a href="mailto:montelct24@gmail.com">montelct24@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              For rights or professional inquiries, please use the subject line:
+              <em>&ldquo;Rights Inquiry &ndash; C. T. Montel&rdquo;</em>.
+            </div>
+          </div>
+          <div>
+            <p class="section-body">
+              You can also find me wandering these corners of the internet:
+            </p>
+            <div class="social-links">
+              <span class="chip">Instagram · @authorc.t_montel</span>
+              <span class="chip">Facebook · Author C. T. Montel</span>
+              <!-- Add or remove platforms as needed -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> C. T. Montel. All rights reserved.
+  </footer>
+
+  <script>
+    // Set current year automatically
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
